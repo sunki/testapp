@@ -15,7 +15,6 @@ class SharesController < ApplicationController
 
       quotes.each do |quote|
         res[quote.trade_date][symbol] = quote.close.to_d
-        res
       end
       res
     end
