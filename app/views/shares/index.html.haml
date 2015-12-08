@@ -3,7 +3,7 @@
 :javascript
   google.load("visualization", "1", {packages:["corechart"]});
   google.setOnLoadCallback(function() {
-    drawChart(#{quotes_chart_data(@shares.map(&:symbol), @quotes, @start_date).to_json});
+    drawChart(#{quotes_chart_data(@shares.map(&:symbol).sort, @quotes, @start_date).to_json});
   });
 
 .row
