@@ -14,7 +14,7 @@
   .cell.gap
   .cell
     = form_tag share_path(0), method: :delete do
-      = select_tag :share_id, options_from_collection_for_select(@shares, :id, :symbol)
+      = select_tag :share_id, options_from_collection_for_select(@shares.sort_by(&:symbol), :id, :symbol)
       = submit_tag 'Delete Share'
 
 #quotes_chart
