@@ -29,6 +29,7 @@ gem 'pg'
 gem 'haml'
 gem 'yahoo-finance'
 gem 'activesupport-json_encoder'
+gem 'authlogic'
 
 group :production do
   gem 'unicorn'
