@@ -13,8 +13,10 @@
       = f.submit 'Add Share'
   .cell.gap
   .cell
-    = form_tag share_path(0), method: :delete do
-      = select_tag :share_id, options_from_collection_for_select(@shares.sort_by(&:symbol), :id, :symbol)
-      = submit_tag 'Delete Share'
+    - if @shares.present?
+      = form_tag share_path(0), method: :delete do
+        = select_tag :share_id, options_from_collection_for_select(@shares.sort_by(&:symbol), :id, :symbol)
+        = submit_tag 'Delete Share'
 
-#quotes_chart
+- if @shares.present?
+  #quotes_chart

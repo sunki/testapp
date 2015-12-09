@@ -5,7 +5,7 @@ class SharesController < ApplicationController
     @symbols = yclient.symbols_by_market('us', 'nyse').sort
 
     @share = Share.new
-    @shares = Share.all
+    @shares = current_user.shares.all
 
     @start_date = 2.years.ago
 
@@ -21,12 +21,12 @@ class SharesController < ApplicationController
   end
 
   def create
-    @share = Share.create(params[:share].permit(:symbol))
+    @share = current_user.shares.create(params[:share].permit(:symbol))
     redirect_to(action: :index)
   end
 
   def destroy
-    @share = Share.destroy(params[:share_id])
+    @share = current_user.shares.destroy(params[:share_id])
     redirect_to(action: :index)
   end
 end

@@ -15,5 +15,4 @@ module SharesHelper
     end
     [['Date'] + titles] + quotes
   end
-
 end
