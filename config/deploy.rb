@@ -25,7 +25,7 @@ set :deploy_to, '/home/pub/testapp'
 set :ssh_options, { forward_agent: true, auth_methods: %w(publickey password) }
 
 # Default value for :linked_files is []
-set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/unicorn.rb', '.ruby-gemset', '.ruby-version')
+set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/unicorn.rb', 'config/secrets.yml', '.ruby-gemset', '.ruby-version')
 
 # Default value for linked_dirs is []
 set :linked_dirs, fetch(:linked_dirs, []).push('log')
