@@ -22,6 +22,8 @@ set :deploy_to, '/home/pub/testapp'
 # Default value for :pty is false
 # set :pty, true
 
+set :ssh_options, { forward_agent: true, auth_methods: %w(publickey password) }
+
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml', 'config/unicorn.rb', '.ruby-gemset', '.ruby-version')
 
@@ -41,7 +43,7 @@ after 'deploy:publishing', 'deploy:restart'
 namespace :deploy do
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      sudo :restart, 'testapp'
+      sudo :service, 'testapp restart'
     end
   end
 end
