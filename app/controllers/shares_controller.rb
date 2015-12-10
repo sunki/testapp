@@ -3,6 +3,8 @@ class SharesController < ApplicationController
   def index
     yclient = YahooFinance::Client.new
     @symbols = yclient.symbols_by_market('us', 'nyse').sort
+    # FIXME: Some symbols breaks Yahoo API calls
+    @symbols = @symbols.reject{ |s| s =~ /\^/ }
 
     @share = Share.new
     @shares = current_user.shares.all
