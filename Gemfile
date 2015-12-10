@@ -32,6 +32,7 @@ gem 'activesupport-json_encoder'
 gem 'authlogic'
 gem 'capistrano-rails'
 gem 'capistrano-rvm'
+
 group :production do
   gem 'unicorn'
 end
