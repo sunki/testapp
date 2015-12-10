@@ -1,28 +1,12 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Описание
+В реальном времени получаем список компаний и запрашиваем котировки добавленных в портфель (shares) акций.
 
-Things you may want to cover:
+## Известные проблемы
+1. Названия некторых котировок содержат недопустимые символы, которые ломают запрос к Yahoo API
+2. Возможны проблемы при трансляции децималов Ruby в JavaScript (маловероятно)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Затраченное время
+Разработка – 10 часов
+Деплой – 6 часов
