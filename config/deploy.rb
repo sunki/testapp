@@ -33,7 +33,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('log')
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
-set :rvm_ruby_version, '2.1.1'
+set :rvm_ruby_version, '2.1.1@testapp'
 
 # Default value for keep_releases is 5
 # set :keep_releases, 5
